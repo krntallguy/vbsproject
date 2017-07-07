@@ -37,4 +37,9 @@ api.add_resource(PlayerMoves, '/<string:playernum>')
 # source of comment: https://pythonprogramming.net/jquery-flask-tutorial/
 @app.route('/interactive/')
 def interactive():
-     return render_template('interactive.html')
+    return render_template('interactive.html')
+
+
+@app.route('/dopplerInput/')
+def dopplerInput():
+    return render_template( 'doppler-example.html' )
