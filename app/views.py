@@ -1,6 +1,8 @@
 from app import api
 from flask_restful import Resource
 from flask import request
+from app import app
+from flask import render_template
 
 player1 = [0,50]
 player2 = [100,50]
@@ -31,3 +33,8 @@ class PlayerMoves(Resource):
         return {-1: -1}
 
 api.add_resource(PlayerMoves, '/<string:playernum>')
+
+# source of comment: https://pythonprogramming.net/jquery-flask-tutorial/
+@app.route('/interactive/')
+def interactive():
+     return render_template('interactive.html')
